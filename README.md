@@ -14,8 +14,7 @@ The **Blog Backend** is a RESTful API built with **Java Spring Boot**, designed 
 </p>
 
 #Database Architecture
-![Database](https://github.com/user-attachments/assets/4ca73ca5-9ab0-43b4-acdc-382b29084c74)
-
+![DatabaseArchitecture](https://github.com/user-attachments/assets/5e5f624b-4bf6-4176-940a-4969d0dcea31)
 
 ## 🎯 Features
 - 📝 **Create, Read, Update, Delete (CRUD) operations** for blog posts.
