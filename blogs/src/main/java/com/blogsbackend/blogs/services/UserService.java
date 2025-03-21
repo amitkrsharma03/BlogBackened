@@ -7,8 +7,8 @@ import com.blogsbackend.blogs.payloads.UserDto;
 
 
 public interface UserService {
-    UserDto createUser(UserDto user);
-    UserDto updateUser(UserDto user, Integer id);
+    UserDto createUser(UserDto username);
+    UserDto updateUser(UserDto username, Integer id);
     UserDto getUserById(Integer id);
     List<UserDto> getAllUsers();
     void deleteUser(Integer id);

@@ -12,24 +12,16 @@ import com.blogsbackend.blogs.services.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
-    //Inject UserService
     @Autowired
     private UserService userService;
-    //Post - create user
+
+    //  Properly define @PostMapping
     @PostMapping("/")
-    public String getMethodName(@RequestParam String param) {
-        return new String();
-    }
-    
     public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto) {
         UserDto createdUserDto = this.userService.createUser(userDto);
         return new ResponseEntity<>(createdUserDto, HttpStatus.CREATED);
     }
-    //Put - update user
-    //Get - get user by id
-    //Get - get all users
 }

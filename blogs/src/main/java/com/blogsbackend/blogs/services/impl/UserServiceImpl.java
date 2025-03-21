@@ -17,19 +17,19 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepo userRepo;
     
-    public UserDto createUser(UserDto userDto) {
-        User user= this.dtoToUser(userDto);
+    public UserDto createUser(UserDto username) {
+        User user= this.dtoToUser(username);
         User savedUser= this.userRepo.save(user);
         return this.userToDto(savedUser);
     }
 
-    public UserDto updateUser(UserDto userDto, Integer id) {
+    public UserDto updateUser(UserDto username, Integer id) {
         User user= this.userRepo.findById(id).
                    orElseThrow(()-> new ResourceNotFoundException("User"," Id ",id));
-        user.setUsername(userDto.getUsername());
-        user.setEmail(userDto.getEmail());
-        user.setPassword(userDto.getPassword());
-        user.setAbout(userDto.getAbout());
+        user.setUsername(username.getUsername());
+        user.setEmail(username.getEmail());
+        user.setPassword(username.getPassword());
+        user.setAbout(username.getAbout());
         User updateuser= this.userRepo.save(user);
         UserDto userDto1 = this.userToDto(updateuser);
         return userDto1;
@@ -69,12 +69,12 @@ public class UserServiceImpl implements UserService {
         return user;
     }
     private UserDto userToDto(User user) {
-        UserDto userDto= new UserDto();
-        userDto.setId(user.getId());
-        userDto.setUsername(user.getUsername());
-        userDto.setEmail(user.getEmail());
-        userDto.setPassword(user.getPassword());
-        userDto.setAbout(user.getAbout());
-        return userDto;
+        UserDto username= new UserDto();
+        username.setId(user.getId());
+        username.setUsername(user.getUsername());
+        username.setEmail(user.getEmail());
+        username.setPassword(user.getPassword());
+        username.setAbout(user.getAbout());
+        return username;
     }
 } 
