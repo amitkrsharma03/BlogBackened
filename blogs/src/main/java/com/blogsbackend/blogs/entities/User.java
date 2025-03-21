@@ -22,7 +22,7 @@ public class User {
     private int id;
 
     @Column(name = "user_name", nullable = false, length = 100)
-    private String username; // ✅ Ensure this maps to "user_name"
+    private String username; //Ensure this maps to "user_name"
     
     private String password;
     private String email;
